@@ -88,6 +88,8 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+var passwordText = document.getElementById("#password")
+
 // Function to prompt user for password options
 function getPasswordOptions() {
 
@@ -95,13 +97,17 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  passwordText.innerHTML =
+    arr[Math.floor(Math.random() * lowerCasedCharacters.length)];
+    console.log(getRandom);
 }
 
 // Function to generate password with user input
 function generatePassword() {
+  
 
 }
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
@@ -116,3 +122,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+getRandom();
