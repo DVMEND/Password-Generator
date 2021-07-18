@@ -90,9 +90,12 @@ var upperCasedCharacters = [
 
 var passwordText = document.getElementById("#password")
 
+var passwordPrompt = prompt("Choose a password between 10 and 64 characters")
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+  passwordPrompt;
+  console.log(passwordPrompt);
 }
 
 // Function for getting a random element from an array
@@ -104,7 +107,7 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-  
+
 
 }
 
@@ -123,4 +126,5 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
 
-getRandom();
+//getRandom();
+getPasswordOptions();
