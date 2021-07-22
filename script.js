@@ -89,32 +89,48 @@ var upperCasedCharacters = [
 ];
 
 var passwordText = document.getElementById("#password");
-var notNumber = NaN
 
 // Function to prompt user for password options
 
 function getPasswordOptions(){
   generateBtn.addEventListener('click', function() {
-    passwordPrompt;
-    var passwordPrompt = prompt("Choose a password between 10 and 64 characters")
-    if (passwordPrompt<10 || passwordPrompt>64 || isNaN(passwordPrompt)) {
+    lengthPrompt;
+    var lengthPrompt = prompt("Choose a password between 10 and 64 characters")
+    if (lengthPrompt<10 || lengthPrompt>64 || isNaN(lengthPrompt)) {
       var wrongInput = alert("only choose a number between 10 and 64")
       wrongInput;
-  }
-   // else if (passwordPrompt>64 || isNaN(passwordPrompt)) {
-     // var wrongInput = alert("only choose a number between 10 and 64")
-      //wrongInput;
- // }
-  
-  else {
-    console.log(passwordPrompt);
-  }})};
+      return;
+    }
+
+      else {
+        console.log(lengthPrompt);
+    }
+
+    var typePrompt = prompt("What types of characters do you want to include?: lowercase, uppercase, numeric, and/ or special").toLowerCase();
+    if (typePrompt.includes("lowercase")) {
+      console.log(lowerCasedCharacters);
+    }
+    if (typePrompt.includes("uppercase")) {
+      console.log(upperCasedCharacters);
+    }
+    if (typePrompt.includes("numeric")) {
+      console.log(numericCharacters);
+    }
+    if(typePrompt.includes("special")) {
+      console.log(specialCharacters);
+    }
+    else {
+      alert("Choose a valid type of character! No commas or slashes!")
+    }
+
+})};
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-  passwordText.innerHTML =
-    arr[Math.floor(Math.random() * lowerCasedCharacters.length)];
-    console.log(getRandom);
+function getRandom() {
+  var item = items[Math.floor(Math.random() * array.length)]
+  //passwordText.innerHTML =
+    //arr[Math.floor(Math.random() * lowerCasedCharacters.length)];
+    //console.log(getRandom);
 }
 
 // Function to generate password with user input
