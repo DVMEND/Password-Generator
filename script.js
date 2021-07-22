@@ -88,24 +88,27 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-var passwordText = document.getElementById("#password")
+var passwordText = document.getElementById("#password");
+var notNumber = NaN
 
-var passwordPrompt = prompt("Choose a password between 10 and 64 characters")
-var wrongInput = alert("only choose a number between 10 and 64")
 // Function to prompt user for password options
-function getPasswordOptions() {
-  if (passwordPrompt<10){
-    wrongInput;
-  }
-    else if (passwordPrompt>64) {
-      console.log(passwordPrompt);
+
+function getPasswordOptions(){
+  generateBtn.addEventListener('click', function() {
+    passwordPrompt;
+    var passwordPrompt = prompt("Choose a password between 10 and 64 characters")
+    if (passwordPrompt<10 || passwordPrompt>64 || isNaN(passwordPrompt)) {
+      var wrongInput = alert("only choose a number between 10 and 64")
       wrongInput;
   }
+   // else if (passwordPrompt>64 || isNaN(passwordPrompt)) {
+     // var wrongInput = alert("only choose a number between 10 and 64")
+      //wrongInput;
+ // }
   
   else {
-    passwordPrompt;
     console.log(passwordPrompt);
-}}
+  }})};
 
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -136,4 +139,4 @@ function writePassword() {
 generateBtn.addEventListener('click', writePassword);
 
 //getRandom();
-getPasswordOptions();
+getPasswordOptions()
