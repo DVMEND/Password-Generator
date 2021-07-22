@@ -91,12 +91,21 @@ var upperCasedCharacters = [
 var passwordText = document.getElementById("#password")
 
 var passwordPrompt = prompt("Choose a password between 10 and 64 characters")
-
+var wrongInput = alert("only choose a number between 10 and 64")
 // Function to prompt user for password options
 function getPasswordOptions() {
-  passwordPrompt;
-  console.log(passwordPrompt);
-}
+  if (passwordPrompt<10){
+    wrongInput;
+  }
+    else if (passwordPrompt>64) {
+      console.log(passwordPrompt);
+      wrongInput;
+  }
+  
+  else {
+    passwordPrompt;
+    console.log(passwordPrompt);
+}}
 
 // Function for getting a random element from an array
 function getRandom(arr) {
